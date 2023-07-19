@@ -1,6 +1,5 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const request = require("request");
 const https = require("https");
 
 const app = express();
@@ -34,9 +33,12 @@ app.post("/", async function (req, res) {
   const jsonData = JSON.stringify(data);
 
   const url = "https://us21.api.mailchimp.com/3.0/lists/bf6e7c5162";
+  const apiKey = "bdf10acf60d8927817e22b7bc23c2912-us21";
+  const base64Auth = Buffer.from(`namrta:${apiKey}`).toString("base64");
+
   const options = {
     method: "POST",
-    auth: "namrta:bdf10acf60d8927817e22b7bc23c2912-us21",
+    auth: `:${base64Auth}`,
   };
 
   try {
