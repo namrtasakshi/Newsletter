@@ -43,7 +43,7 @@ app.post("/", async function (req, res) {
 
   try {
     const response = await sendMailchimpRequest(url, options, jsonData);
-    if (response.statusCode === 401 || response.statusCode===200) {
+    if (response.statusCode === 201 || response.statusCode===200) {
       res.sendFile(__dirname + "/success.html");
     } else {
       res.sendFile(__dirname + "/failure.html");
