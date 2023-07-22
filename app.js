@@ -63,7 +63,7 @@ function sendMailchimpRequest(url, options, jsonData) {
       response.on("data", function (data) {
         responseData += data;
       });
-
+console.log(responseData, "response Data");
       response.on("end", function () {
         resolve({
           statusCode: response.statusCode,
@@ -76,6 +76,7 @@ function sendMailchimpRequest(url, options, jsonData) {
       reject(error);
     });
 
+    console.log(jsonData, "jsaon Data");
     request.write(jsonData);
     request.end();
   });
