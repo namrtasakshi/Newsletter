@@ -63,13 +63,11 @@ function sendMailchimpRequest(url, options, jsonData) {
       response.on("data", function (data) {
         responseData += data;
       });
-console.log(responseData, "response Data");
-      response.on("end", function () {
-        resolve({
-          statusCode: response.statusCode,
-          data: JSON.parse(responseData),
-        });
-      });
+
+      response.on("end", () => {
+    console.log("Mailchimp API Response:", responseData);
+    // Process the response as needed
+  });
     });
 
     request.on("error", function (error) {
