@@ -32,8 +32,8 @@ app.post("/", async function (req, res) {
 
   const jsonData = JSON.stringify(data);
 
-  const url = "https://us21.api.mailchimp.com/3.0/lists/bf6e7c5162";
-  const apiKey = "4b544f2069990a5e5d351aa87b8709b4-us21";
+  const url = "https://us21.api.mailchimp.com/3.0/lists/356e50f5e2";
+  const apiKey = "5071c527a156079bc9a6b096ca4fdb68-us21";
   const base64Auth = Buffer.from(`namrta:${apiKey}`).toString("base64");
 
   const options = {
